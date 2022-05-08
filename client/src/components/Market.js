@@ -1,6 +1,6 @@
 import React from "react";
 
-const Market = () => {
+const Market = ({ botList }) => {
   return <div>Market</div>;
 };
 

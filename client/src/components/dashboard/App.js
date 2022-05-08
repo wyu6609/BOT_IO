@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Link as RouterLink, Routes, Route } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -10,12 +10,11 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
+
 import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -254,7 +253,7 @@ function App() {
                   <Home user={user} botList={botList} setBotList={setBotList} />
                 }
               />
-              <Route path="/market" element={<Market />} />
+              <Route path="market" element={<Market botList={botList} />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </Container>
