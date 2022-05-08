@@ -179,7 +179,7 @@ function LoginForm({
               label="Password"
               type="password"
               id="password"
-              autocomplete="new-password"
+              autoComplete="new-password"
             />
 
             <Button
@@ -190,10 +190,19 @@ function LoginForm({
             >
               Sign In
             </Button>
+            <Button
+              type="submit"
+              variant="contained"
+              color="error"
+              sx={{ mb: 2, alignItems: "center" }}
+              onClick={() => {
+                handleDemoLogin();
+              }}
+            >
+              DEMO LOGIN
+            </Button>
             <Grid container>
-              <Grid item xs></Grid>
-
-              <Grid item>
+              <Grid item align="center" sx={{ mt: 3 }}>
                 <Link
                   href="#"
                   variant="body2"
@@ -210,17 +219,6 @@ function LoginForm({
         </Box>
 
         <Copyright sx={{ mt: 8, mb: 4 }} />
-        <Link
-          href="#"
-          align="center"
-          sx={{ color: "#fd5d77" }}
-          variant="p"
-          onClick={() => {
-            handleDemoLogin();
-          }}
-        >
-          {"Demo Login"}
-        </Link>
       </Container>
     </ThemeProvider>
   );

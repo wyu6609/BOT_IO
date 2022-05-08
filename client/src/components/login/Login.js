@@ -52,18 +52,19 @@ export default function Login({ onLogin }) {
           sx={{
             backgroundColor: "#00bfa5",
           }}
-          // className="floating"
         >
-          <img
-            className="login-img floating"
-            // src={
-            //   showLogin
-            //     ? `https://avatars.dicebear.com/api/bottts/yellow.svg`
-            //     : `https://avatars.dicebear.com/api/bottts/${seed}.svg`
-            // }
+          <div className="centered">
+            <img
+              className="login-img floating"
+              // src={
+              //   showLogin
+              //     ? `https://avatars.dicebear.com/api/bottts/yellow.svg`
+              //     : `https://avatars.dicebear.com/api/bottts/${seed}.svg`
+              // }
 
-            src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
-          />
+              src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
+            />
+          </div>
         </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box

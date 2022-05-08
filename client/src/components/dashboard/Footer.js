@@ -18,6 +18,12 @@ function Copyright() {
   );
 }
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#00bfa5",
+      contrastText: "#fff",
+    },
+  },
   typography: {
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },

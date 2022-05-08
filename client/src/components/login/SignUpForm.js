@@ -33,11 +33,16 @@ function Copyright(props) {
 }
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#fde65d",
+      contrastText: "gray",
+    },
+  },
   typography: {
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },
 });
-
 function SignUpForm({
   onLogin,
   showLogin,
@@ -118,7 +123,7 @@ function SignUpForm({
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#fde65d" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -193,9 +198,10 @@ function SignUpForm({
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid container align="center" sx={{ mt: 3 }}>
               <Grid item>
                 <Link
+                  color="#cccccc"
                   href="#"
                   variant="body2"
                   onClick={() => {

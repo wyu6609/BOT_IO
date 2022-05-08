@@ -18,3 +18,13 @@
     transform: translate(0, -0px);
   }
 }
+.login-img {
+  width: 450px;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

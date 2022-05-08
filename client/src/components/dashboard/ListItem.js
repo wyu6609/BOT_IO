@@ -4,61 +4,39 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SmartToyIcon from "@mui/icons-material/SmartToy";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
-      <ListItemIcon>
+      <ListItemIcon sx={{ color: "#00bfa5" }}>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
+    <ListItemButton
+    // onClick={() => {
+    //   navigate("/market");
+    // }}
+    >
+      <ListItemIcon sx={{ color: "#00bfa5" }}>
+        <SmartToyIcon />
       </ListItemIcon>
       <ListItemText primary="Market" />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+      <ListItemIcon sx={{ color: "#00bfa5" }}>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Profile" />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+      <ListItemIcon sx={{ color: "#00bfa5" }}>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="About Us" />
     </ListItemButton>
-  </React.Fragment>
-);
-
-export const secondaryListItems = (
-  <React.Fragment>
-    {/* <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton> */}
   </React.Fragment>
 );

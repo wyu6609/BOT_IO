@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { styled } from "@mui/material/styles";
@@ -21,13 +21,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-import { mainListItems, secondaryListItems } from "./ListItem.js";
+import { mainListItems } from "./ListItem.js";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "../login/Login";
 import Home from "../Home";
 import Error from "../Error";
+import Market from "../Market";
 import Footer from "./Footer";
 function Copyright(props) {
   return (
@@ -46,9 +47,15 @@ function Copyright(props) {
     </Typography>
   );
 }
+
+//sound functions
 const logoutSound = () => {
   let logoutAudio = new Audio("/sounds/logout-sound.mp3");
   logoutAudio.play();
+};
+const btnSound = () => {
+  let btnAudio = new Audio("/sounds/review-btn-sound.mp3");
+  btnAudio.play();
 };
 const drawerWidth = 240;
 
@@ -107,16 +114,21 @@ const theme = createTheme({
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },
 });
-
 function App() {
+  const navigate = useNavigate();
+  // useNavigate hook
+
   //drawer menu open close state
   const [open, setOpen] = React.useState(true);
   // login state
   const [user, setUser] = useState(null);
+  //bots state
+  const [botList, setBotList] = useState([]);
 
   //set drawer menu default to open
   const toggleDrawer = () => {
     setOpen(!open);
+    btnSound();
   };
 
   //logout btn click handler
@@ -153,6 +165,7 @@ function App() {
   }, []);
 
   if (!user) return <Login onLogin={setUser} />;
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
@@ -182,7 +195,7 @@ function App() {
               noWrap
               sx={{ flexGrow: 1, fontFamily: "Press Start 2P" }}
             >
-              BOT_IO 2.0
+              BOT_IO 1.1
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -203,15 +216,19 @@ function App() {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
+            <IconButton onClick={toggleDrawer} sx={{ color: "#00bfa5" }}>
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-
-          <List component="nav">
+          {/* menu list icons */}
+          <List
+            component="nav"
+            sx={{
+              mt: 5,
+              color: "primary",
+            }}
+          >
             {mainListItems}
-
-            {secondaryListItems}
           </List>
         </Drawer>
         <Box
@@ -231,7 +248,13 @@ function App() {
           {/* MAIN COMPONENTS */}
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Routes>
-              <Route path="/" element={<Home user={user} />} />
+              <Route
+                path="/"
+                element={
+                  <Home user={user} botList={botList} setBotList={setBotList} />
+                }
+              />
+              <Route path="/market" element={<Market />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </Container>
