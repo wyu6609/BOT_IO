@@ -1,5 +1,5 @@
 class BotSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :price, :image
 
-  has_one :category
+  belongs_to :category
 end

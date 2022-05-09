@@ -17,7 +17,7 @@ class UserItemsController < ApplicationController
     render json: selected_item
   end
 
-  def clear_cart
+  def clearcart
     user_items = UserItem.where(user_id: params[:id])
     user_items.destroy_all
     render json: user_items

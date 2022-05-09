@@ -18,7 +18,7 @@ import PaymentForm from "./PaymentForm";
 import Review from "./Review";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { toast } from "react-toastify";
 const steps = ["Shipping address", "Payment details", "Review your order"];
@@ -29,7 +29,7 @@ const theme = createTheme({
   },
 });
 
-export default function Checkout({ cartTotal, userCart }) {
+export default function Checkout({ user, setCartLength }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [addLine1, setAddLine1] = useState("");
@@ -72,6 +72,7 @@ export default function Checkout({ cartTotal, userCart }) {
       case 2:
         return (
           <Review
+            user={user}
             firstName={firstName}
             lastName={lastName}
             addLine1={addLine1}
@@ -84,8 +85,6 @@ export default function Checkout({ cartTotal, userCart }) {
             cardNumber={cardNumber}
             expDate={expDate}
             cvv={cvv}
-            cartTotal={cartTotal}
-            userCart={userCart}
           />
         );
       default:
@@ -97,12 +96,21 @@ export default function Checkout({ cartTotal, userCart }) {
     let checkOutAudio = new Audio("/sounds/purchased-sound.mp3");
     checkOutAudio.play();
   };
+
+  const clearCart = () => {
+    fetch(`/clearcart/${user.id}`, {
+      method: "DELETE",
+    });
+    setCartLength(0);
+  };
+
   const [activeStep, setActiveStep] = React.useState(0);
   if (activeStep === steps.length) {
     checkOutSuccessSound();
     setTimeout(() => {
       navigate("/market");
     }, "5000");
+    clearCart();
     toast.success("thanks you for your purchase, rerouting back to market...", {
       theme: "colored",
       position: "top-center",

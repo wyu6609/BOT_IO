@@ -239,13 +239,6 @@ function App() {
     });
   };
 
-  const onCheckOutClick = (cartSum, cartItems) => {
-    console.log(cartItems);
-    setCartTotal(cartSum);
-
-    setUserCart(cartItems);
-  };
-
   if (!user)
     return <Login onLogin={setUser} fetchCartLength={fetchCartLength} />;
 
@@ -362,14 +355,18 @@ function App() {
                       botList={bots}
                       user={user}
                       setCartLength={setCartLength}
-                      onCheckOutClick={onCheckOutClick}
                     />
                   }
                 />
                 <Route
                   path="/checkout"
                   element={
-                    <Checkout userCart={userCart} cartTotal={cartTotal} />
+                    <Checkout
+                      userCart={userCart}
+                      cartTotal={cartTotal}
+                      user={user}
+                      setCartLength={setCartLength}
+                    />
                   }
                 />
                 <Route path="*" element={<Error />} />

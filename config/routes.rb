@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/cart/:id', to: 'user_items#cart'
-  get 'clear_cart/:id', to: 'user_items#clear_cart'
+  delete 'clearcart/:id', to: 'user_items#clearcart'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

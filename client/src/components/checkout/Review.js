@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
+
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -16,13 +18,14 @@ export default function Review({
   state,
   zip,
   country,
-  cartTotal,
-  userCart,
+  user,
   cardName,
   cardNumber,
   expDate,
   cvv,
 }) {
+  const [items, setItems] = useState([]);
+  const [sum, setSum] = useState(0);
   const payments = [
     { name: "Card type", detail: "Visa" },
     { name: "Card holder", detail: `${firstName} ${lastName}` },
@@ -37,14 +40,33 @@ export default function Review({
     "Teleoperated",
     "Augmenting",
   ];
-  console.log(cartTotal);
+  useEffect(() => {
+    fetch(`/cart/${user.id}`)
+      .then((r) => r.json())
+      .then((data) => {
+        console.log(data);
+        setItems(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    setSum(getCartTotal(items));
+  }, [items]);
+
+  function getCartTotal(arr) {
+    let Arr = [];
+    arr.map((el) => Arr.push(el.bot.price));
+    const sum = Arr.reduce((partialSum, a) => partialSum + a, 0);
+    return sum;
+  }
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Order summary
       </Typography>
       <List disablePadding>
-        {userCart.map((item) => (
+        {items.map((item) => (
           <ListItem key={item.bot.name} sx={{ py: 1, px: 0 }}>
             <ListItemAvatar>
               <Avatar src={item.bot.image}>
@@ -62,7 +84,7 @@ export default function Review({
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${cartTotal}
+            ${sum}
           </Typography>
         </ListItem>
       </List>

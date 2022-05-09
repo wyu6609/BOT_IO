@@ -19,7 +19,7 @@ const theme = createTheme({
 
 //get all the reviews for this bot
 // includes user name fo reach bo
-function Cart({ user, onCheckOutClick, setCartLength }) {
+function Cart({ user, setCartLength }) {
   const [cartItems, setCartItems] = useState([]);
   const [cartSum, setCartSum] = useState(0);
   // console.log(botList);
@@ -116,7 +116,6 @@ function Cart({ user, onCheckOutClick, setCartLength }) {
         <Grid container item justifyContent="center" sx={{ mt: 2 }}>
           <Button
             onClick={() => {
-              onCheckOutClick(cartSum, cartItems);
               navigate("/checkout");
             }}
             variant="contained"
