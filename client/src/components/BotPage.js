@@ -42,7 +42,7 @@ const theme = createTheme({
 
 //get all the reviews for this bot
 // includes user name fo reach bo
-function BotPage({ user }) {
+function BotPage({ user, handleAddCart }) {
   const { bot_id } = useParams();
   const [reviews, setReviews] = useState([]);
   const [averageRating, setAverageRating] = useState("");
@@ -53,11 +53,9 @@ function BotPage({ user }) {
     fetch(`/bots/${bot_id}`)
       .then((r) => r.json())
       .then((bot) => {
-        console.log(bot);
         setBot(bot);
         setCategory(bot.category.name);
         setReviews(bot.reviews);
-        console.log(bot.reviews);
       });
   }, []);
 
@@ -169,12 +167,13 @@ function BotPage({ user }) {
                   user_id={user.id}
                   reviews={reviews}
                   setReviews={setReviews}
+                  user={user}
                 />
                 <IconButton
                   sx={{ color: "#3794ff" }}
-                  // onClick={() => {
-                  //   handleAddCart(bot.id, user.id);
-                  //     }}
+                  onClick={() => {
+                    handleAddCart(bot.id, user.id);
+                  }}
                 >
                   <AddShoppingCartRoundedIcon size="large" />
                 </IconButton>

@@ -50,7 +50,7 @@ puts 'seeding Review...'
 1500.times do
   Review.create(
     description: Faker::Hipster.sentence(word_count: 6),
-    rating: Faker::Commerce.price(5..500.0),
+    rating: Faker::Number.between(from: 1, to: 5),
     user_id: User.ids.sample,
     bot_id: Bot.ids.sample,
   )

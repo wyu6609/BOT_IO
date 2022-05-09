@@ -23,7 +23,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { mainListItems } from "./ListItem.js";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import BotPage from "../BotPage";
-
+import Cart from "../CartComponents/Cart";
 import Login from "../login/Login";
 import Home from "../Home";
 import Error from "../Error";
@@ -52,9 +52,17 @@ const logoutSound = () => {
   let logoutAudio = new Audio("/sounds/logout-sound.mp3");
   logoutAudio.play();
 };
+const submitReviewSound = () => {
+  let submitReviewAudio = new Audio("/sounds/submit-review-sound.mp3");
+  submitReviewAudio.play();
+};
 const btnSound = () => {
   let btnAudio = new Audio("/sounds/review-btn-sound.mp3");
   btnAudio.play();
+};
+const errorSound = () => {
+  let errorAudio = new Audio("/sounds/error-sound.mp3");
+  errorAudio.play();
 };
 const drawerWidth = 240;
 
@@ -124,7 +132,7 @@ function App() {
   const [user, setUser] = useState(null);
   //bots state
   const [botList, setBotList] = useState([]);
-
+  const [cartLength, setCartLength] = useState("");
   //set drawer menu default to open
   const toggleDrawer = () => {
     setOpen(!open);
@@ -161,12 +169,73 @@ function App() {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
+          fetchCartLength(user);
         });
       }
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} setBotList={setBotList} />;
+  //fetch cart length
+  const fetchCartLength = (user) => {
+    fetch(`/cart/${user.id}`)
+      .then((r) => r.json())
+      .then((data) => {
+        console.log(data.length);
+        setCartLength(data.length);
+      });
+  };
+
+  //add to cart function
+  const handleAddCart = (bot_id) => {
+    console.log(user.id);
+    let newObj = {
+      user_id: user.id,
+      bot_id: bot_id,
+    };
+
+    fetch("/user_items", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newObj),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((obj) => {
+          // setCounterState(obj);
+          console.log(obj);
+          submitReviewSound();
+          toast.success("bot added to cart!", {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          fetchCartLength(user);
+        });
+      } else {
+        r.json().then((err) => {
+          console.log(err);
+          errorSound();
+          toast.error("limited to one bot per user!", {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        });
+      }
+    });
+  };
+
+  if (!user)
+    return <Login onLogin={setUser} fetchCartLength={fetchCartLength} />;
 
   return (
     <>
@@ -202,8 +271,13 @@ function App() {
               >
                 BOT_IO 1.1
               </Typography>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
+              <IconButton
+                color="inherit"
+                onClick={() => {
+                  navigate("cart");
+                }}
+              >
+                <Badge badgeContent={cartLength} color="secondary">
                   <ShoppingCartOutlinedIcon />
                 </Badge>
               </IconButton>
@@ -259,9 +333,27 @@ function App() {
                 />
                 <Route
                   path="market/bots/:bot_id"
-                  element={<BotPage user={user} />}
+                  element={
+                    <BotPage user={user} handleAddCart={handleAddCart} />
+                  }
                 />
-                <Route path="market" element={<Market botList={botList} />} />
+                <Route
+                  path="market"
+                  element={
+                    <Market botList={botList} handleAddCart={handleAddCart} />
+                  }
+                />
+                <Route
+                  path="cart"
+                  element={
+                    <Cart
+                      botList={bots}
+                      user={user}
+                      setCartLength={setCartLength}
+                    />
+                  }
+                />
+
                 <Route path="*" element={<Error />} />
               </Routes>
             </Container>

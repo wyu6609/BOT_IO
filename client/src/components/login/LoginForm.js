@@ -47,6 +47,8 @@ const theme = createTheme({
 });
 
 function LoginForm({
+  fetchCartLength,
+  setCartLength,
   onLogin,
   showLogin,
   setShowLogin,
@@ -83,7 +85,7 @@ function LoginForm({
             progress: undefined,
           });
           onLogin(user);
-
+          fetchCartLength(user);
           navigate("/");
         }, []);
       } else {
@@ -128,8 +130,9 @@ function LoginForm({
             progress: undefined,
           });
           loginSound();
-          onLogin(user);
 
+          onLogin(user);
+          fetchCartLength(user);
           navigate("/");
         });
       }

@@ -6,7 +6,7 @@ class BotsController < ApplicationController
   def show
     selected_bots = Bot.find(params[:id])
     render json: selected_bots,
-           include: %w[category.name reviews reviews.user reviews.bot],
+           include: %w[category.name reviews reviews.user],
            serializer: BotWithCategoryReviewSerializer
   end
 end

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Global } from "@emotion/react";
 import { styled } from "@mui/material/styles";
@@ -58,6 +59,8 @@ const deleteReviewSound = () => {
 
 //////////////////////////////////////
 function ReviewDrawer(props) {
+  const navigate = useNavigate();
+
   const { window } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -68,19 +71,34 @@ function ReviewDrawer(props) {
       bot_id: props.bot_id,
       user_id: props.user_id,
     };
-    console.log(newReview);
+    let revObj = {
+      description: description,
+      rating: value,
+      bot_id: props.bot_id,
+      user_id: props.user_id,
+      user: {
+        id: props.user.id,
+        first_name: props.user.first_name,
+        last_name: props.user.last_name,
+        username: props.user.username,
+      },
+    };
+
     fetch("/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newReview),
+      body: JSON.stringify(revObj),
     }).then((r) => {
       if (r.ok) {
         r.json().then((newRev) => {
-          console.log(newRev);
-
-          props.setReviews([newRev, ...props.reviews]);
+          newRev.user = {
+            id: props.user.id,
+            first_name: props.user.first_name,
+            last_name: props.user.last_name,
+            username: props.user.username,
+          };
           toast.success("ya review has been added!", {
             theme: "colored",
             position: "top-left",
@@ -92,10 +110,10 @@ function ReviewDrawer(props) {
             progress: undefined,
           });
           submitReviewSound();
+          props.setReviews([newRev, ...props.reviews]);
         });
       } else {
         r.json().then((err) => {
-          console.log(err);
           errorSound();
           toast.error("bot reviewed OR fill out the form!  ", {
             theme: "colored",

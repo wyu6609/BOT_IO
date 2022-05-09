@@ -28,7 +28,6 @@ function getLabelText(value) {
 }
 
 export default function DrawerList({ reviews, user_id, handleDelete }) {
-  console.log(reviews);
   return (
     <List
       sx={{
@@ -38,7 +37,7 @@ export default function DrawerList({ reviews, user_id, handleDelete }) {
       }}
     >
       {reviews.map((review) => (
-        <>
+        <div key={review.id}>
           <Divider component="li" variant="inset" />
 
           <ListItem>
@@ -70,7 +69,7 @@ export default function DrawerList({ reviews, user_id, handleDelete }) {
             />
           </ListItem>
           <Divider component="li" variant="inset" />
-        </>
+        </div>
       ))}
     </List>
   );

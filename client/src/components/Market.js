@@ -29,7 +29,7 @@ const theme = createTheme({
   },
 });
 
-function Market() {
+function Market({ handleAddCart }) {
   const [botList, setBotList] = useState([]);
   useEffect(() => {
     fetch("/bots")
@@ -106,9 +106,8 @@ function Market() {
     setPageNumber(selected);
   };
 
-  const clickCardHandler = (bot) => {
-    console.log(bot.id);
-    navigate(`bots/${bot.id}`);
+  const clickCardHandler = (bot_id) => {
+    navigate(`bots/${bot_id}`);
   };
 
   return (
@@ -171,7 +170,7 @@ function Market() {
                       image={bot.image}
                       alt="random"
                       onClick={() => {
-                        clickCardHandler(bot);
+                        clickCardHandler(bot.id);
                         pageChangeSound();
                       }}
                     />
@@ -204,7 +203,13 @@ function Market() {
                       {bot.category.name}
                     </Typography>
                     <CardActions>
-                      <IconButton size="small" sx={{ color: "#bf8900" }}>
+                      <IconButton
+                        onClick={() => {
+                          handleAddCart(bot.id);
+                        }}
+                        size="small"
+                        sx={{ color: "#bf8900" }}
+                      >
                         <AddShoppingCartRoundedIcon />
                       </IconButton>
 
