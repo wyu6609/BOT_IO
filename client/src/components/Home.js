@@ -1,15 +1,15 @@
-import { React, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import "./Home.css";
 
-const Home = ({ botList, setBotList }) => {
+const Home = ({ setBots, bots }) => {
   useEffect(() => {
     fetch("/bots")
       .then((r) => r.json())
       .then((bots) => {
-        setBotList(bots);
+        setBots(bots);
       });
   }, []);
-  let imgBots = botList.map((bot) => {
+  let imgBots = bots.map((bot) => {
     return (
       <div className="orb">
         <img className="bot-image  " src={bot.image} />

@@ -8,27 +8,56 @@ import SmartToyIcon from "@mui/icons-material/SmartToy";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 
+const btnSound = () => {
+  let btnAudio = new Audio("/sounds/review-btn-sound.mp3");
+  btnAudio.play();
+};
+
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton component={Link} to="/">
+    <ListItemButton
+      component={Link}
+      to="/"
+      onClick={() => {
+        btnSound();
+      }}
+    >
       <ListItemIcon sx={{ color: "#00bfa5" }}>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItemButton>
-    <ListItemButton component={Link} to="market">
+    <ListItemButton
+      component={Link}
+      to="market"
+      onClick={() => {
+        btnSound();
+      }}
+    >
       <ListItemIcon sx={{ color: "#00bfa5" }}>
         <SmartToyIcon />
       </ListItemIcon>
       <ListItemText primary="Market" />
     </ListItemButton>
-    <ListItemButton component={Link} to="profile">
+    <ListItemButton
+      component={Link}
+      to="profile"
+      onClick={() => {
+        btnSound();
+      }}
+    >
       <ListItemIcon sx={{ color: "#00bfa5" }}>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Profile" />
     </ListItemButton>
-    <ListItemButton component={Link} to="about_us">
+    <ListItemButton
+      component={Link}
+      to="about_us"
+      onClick={() => {
+        btnSound();
+      }}
+    >
       <ListItemIcon sx={{ color: "#00bfa5" }}>
         <BarChartIcon />
       </ListItemIcon>

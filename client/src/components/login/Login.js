@@ -36,7 +36,7 @@ const errorSound = () => {
   errorAudio.play();
 };
 
-export default function Login({ onLogin }) {
+export default function Login({ onLogin, setBotList }) {
   const [showLogin, setShowLogin] = useState(true);
   //   logout
 
@@ -86,6 +86,7 @@ export default function Login({ onLogin }) {
                   loginSound={loginSound}
                   errorSound={errorSound}
                   signUpSound={signUpSound}
+                  setBotList={setBotList}
                 />
               </>
             ) : (

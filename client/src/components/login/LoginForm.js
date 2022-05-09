@@ -72,7 +72,6 @@ function LoginForm({
       if (r.ok) {
         r.json().then((user) => {
           loginSound();
-          onLogin(user);
           toast.success(`WELCOME ${user.username}!`, {
             theme: "colored",
             position: "top-center",
@@ -83,6 +82,7 @@ function LoginForm({
             draggable: false,
             progress: undefined,
           });
+          onLogin(user);
 
           navigate("/");
         }, []);
@@ -98,6 +98,7 @@ function LoginForm({
             draggable: false,
             progress: undefined,
           });
+          console.log("fired");
           errorSound();
         });
       }
@@ -116,8 +117,6 @@ function LoginForm({
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          loginSound();
-          onLogin(user);
           toast.success(`WELCOME ${user.username}!`, {
             theme: "colored",
             position: "top-center",
@@ -128,11 +127,10 @@ function LoginForm({
             draggable: false,
             progress: undefined,
           });
+          loginSound();
+          onLogin(user);
+
           navigate("/");
-        });
-      } else {
-        r.json().then((err) => {
-          errorSound();
         });
       }
     });
@@ -158,8 +156,8 @@ function LoginForm({
           </Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit}
             noValidate
+            onSubmit={handleSubmit}
             sx={{ mt: 1 }}
           >
             <TextField
@@ -191,7 +189,7 @@ function LoginForm({
               Sign In
             </Button>
             <Button
-              type="submit"
+              type="button"
               variant="contained"
               color="error"
               sx={{ mb: 2, alignItems: "center" }}
