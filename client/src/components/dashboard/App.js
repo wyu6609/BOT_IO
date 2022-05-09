@@ -28,6 +28,7 @@ import Login from "../login/Login";
 import Home from "../Home";
 import Error from "../Error";
 import Market from "../Market";
+import Checkout from "../checkout/Checkout";
 import Footer from "./Footer";
 function Copyright(props) {
   return (
@@ -133,6 +134,10 @@ function App() {
   //bots state
   const [botList, setBotList] = useState([]);
   const [cartLength, setCartLength] = useState("");
+
+  const [cartTotal, setCartTotal] = useState("");
+  const [userCart, setUserCart] = useState([]);
+
   //set drawer menu default to open
   const toggleDrawer = () => {
     setOpen(!open);
@@ -232,6 +237,13 @@ function App() {
         });
       }
     });
+  };
+
+  const onCheckOutClick = (cartSum, cartItems) => {
+    console.log(cartItems);
+    setCartTotal(cartSum);
+
+    setUserCart(cartItems);
   };
 
   if (!user)
@@ -350,10 +362,16 @@ function App() {
                       botList={bots}
                       user={user}
                       setCartLength={setCartLength}
+                      onCheckOutClick={onCheckOutClick}
                     />
                   }
                 />
-
+                <Route
+                  path="/checkout"
+                  element={
+                    <Checkout userCart={userCart} cartTotal={cartTotal} />
+                  }
+                />
                 <Route path="*" element={<Error />} />
               </Routes>
             </Container>

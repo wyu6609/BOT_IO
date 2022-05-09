@@ -116,8 +116,8 @@ function Cart({ user, onCheckOutClick, setCartLength }) {
         <Grid container item justifyContent="center" sx={{ mt: 2 }}>
           <Button
             onClick={() => {
-              // onCheckOutClick(cartTotal, newArr);
-              // history.push("/checkout");
+              onCheckOutClick(cartSum, cartItems);
+              navigate("/checkout");
             }}
             variant="contained"
           >
