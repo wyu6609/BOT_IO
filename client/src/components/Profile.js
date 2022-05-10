@@ -4,9 +4,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import "./Profile.css";
 import Divider from "@mui/material/Divider";
+import Box from "@mui/material/Box";
+
+import Container from "@mui/material/Container";
 
 const Profile = ({ user }) => {
   return (
@@ -16,13 +19,17 @@ const Profile = ({ user }) => {
       justifyContent="center"
       className="aboutContainer floating"
     >
-      <Card sx={{ maxWidth: 350, my: 15 }}>
+      <Card sx={{ width: 400, my: 6 }}>
         <CardActionArea>
           <CardMedia
             component="img"
             image={`https://avatars.dicebear.com/api/pixel-art/${user.id}.svg`}
             alt="avatar"
           />
+          <Divider className="line" />
+          <Typography sx={{ mt: 1 }} gutterBottom variant="p" component="div">
+            USER INFO
+          </Typography>
           <Divider className="line" />
           <CardContent align="left" className="cardContent">
             <Typography gutterBottom variant="p" component="div">

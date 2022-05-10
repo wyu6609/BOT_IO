@@ -143,7 +143,7 @@ function App() {
   //set bots
   const [bots, setBots] = useState([]);
   //drawer menu open close state
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   // login state
   const [user, setUser] = useState(null);
   //bots state
@@ -172,7 +172,7 @@ function App() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         logoutSound();
-        toast.success(`LOGGED OUT!`, {
+        toast.error(`LOGGED OUT!`, {
           theme: "colored",
           position: "top-center",
           autoClose: 2500,
