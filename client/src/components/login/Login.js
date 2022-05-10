@@ -36,7 +36,7 @@ const errorSound = () => {
   errorAudio.play();
 };
 
-export default function Login({ onLogin, fetchCartLength }) {
+export default function Login({ onLogin, fetchCartLength, fetchBots }) {
   const [showLogin, setShowLogin] = useState(true);
   //   logout
 
@@ -81,6 +81,7 @@ export default function Login({ onLogin, fetchCartLength }) {
                 <h1 className="login-title">BOT_IO 1.1</h1>
                 <LoginForm
                   fetchCartLength={fetchCartLength}
+                  fetchBots={fetchBots}
                   onLogin={onLogin}
                   showLogin={showLogin}
                   setShowLogin={setShowLogin}

@@ -19,7 +19,6 @@ export default function InsetDividers({ botCartList, handleDeleteCartItem }) {
         maxWidth: "500px",
       }}
     >
-      <Divider variant="inset" component="li" />
       {botCartList.length === 0 ? (
         <EmptyCart />
       ) : (
@@ -46,8 +45,6 @@ export default function InsetDividers({ botCartList, handleDeleteCartItem }) {
           );
         })
       )}
-
-      <Divider variant="inset" component="li" />
     </List>
   );
 }

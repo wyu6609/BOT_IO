@@ -30,6 +30,8 @@ import Error from "../Error";
 import Market from "../Market";
 import Checkout from "../checkout/Checkout";
 import TypeWriterEffect from "react-typewriter-effect";
+import Profile from "../Profile";
+import About from "../About";
 import Footer from "./Footer";
 import "../App.css";
 function Copyright(props) {
@@ -151,6 +153,14 @@ function App() {
   const [cartTotal, setCartTotal] = useState("");
   const [userCart, setUserCart] = useState([]);
 
+  //fetch bots
+  const fetchBots = () => {
+    fetch("/bots")
+      .then((r) => r.json())
+      .then((bots) => {
+        setBotList(bots);
+      });
+  };
   //set drawer menu default to open
   const toggleDrawer = () => {
     setOpen(!open);
@@ -187,6 +197,7 @@ function App() {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
+          fetchBots();
           fetchCartLength(user);
         });
       }
@@ -252,7 +263,13 @@ function App() {
   };
 
   if (!user)
-    return <Login onLogin={setUser} fetchCartLength={fetchCartLength} />;
+    return (
+      <Login
+        onLogin={setUser}
+        fetchCartLength={fetchCartLength}
+        fetchBots={fetchBots}
+      />
+    );
 
   return (
     <>
@@ -370,7 +387,7 @@ function App() {
               <Routes>
                 <Route
                   path="/"
-                  element={<Home user={user} bots={bots} setBots={setBots} />}
+                  element={<Home user={user} botList={botList} />}
                 />
                 <Route
                   path="market/bots/:bot_id"
@@ -388,7 +405,7 @@ function App() {
                   path="cart"
                   element={
                     <Cart
-                      botList={bots}
+                      botList={botList}
                       user={user}
                       setCartLength={setCartLength}
                     />
@@ -404,6 +421,11 @@ function App() {
                       setCartLength={setCartLength}
                     />
                   }
+                />
+                <Route path="profile" element={<Profile user={user} />} />
+                <Route
+                  path="about"
+                  element={<About user={user} botList={botList} />}
                 />
                 <Route path="*" element={<Error />} />
               </Routes>

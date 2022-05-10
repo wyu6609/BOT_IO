@@ -52,7 +52,7 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton
       component={Link}
-      to="about_us"
+      to="about"
       onClick={() => {
         btnSound();
       }}

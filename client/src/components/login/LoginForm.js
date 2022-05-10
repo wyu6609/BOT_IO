@@ -47,6 +47,7 @@ const theme = createTheme({
 });
 
 function LoginForm({
+  fetchBots,
   fetchCartLength,
   setCartLength,
   onLogin,
@@ -85,6 +86,7 @@ function LoginForm({
             progress: undefined,
           });
           onLogin(user);
+          fetchBots();
           fetchCartLength(user);
           navigate("/");
         }, []);
@@ -130,8 +132,8 @@ function LoginForm({
             progress: undefined,
           });
           loginSound();
-
           onLogin(user);
+          fetchBots();
           fetchCartLength(user);
           navigate("/");
         });

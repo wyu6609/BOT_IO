@@ -6,7 +6,7 @@ export default function ActionAreaCard() {
   return (
     <Container sx={{ maxWidth: 345, height: 150, my: 5, color: "red" }}>
       <h3>ya cart iz emptee!</h3>
-      <div className="floating">
+      <div>
         <ProductionQuantityLimitsOutlinedIcon className="empty-cart-icon" />
       </div>
     </Container>
