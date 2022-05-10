@@ -30,6 +30,7 @@ import Error from "../Error";
 import Market from "../Market";
 import Checkout from "../checkout/Checkout";
 import Footer from "./Footer";
+import "./App.css";
 function Copyright(props) {
   return (
     <Typography
@@ -39,8 +40,8 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://willyu.netlify.com" target="_blank">
+        BOT.IO
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -64,6 +65,11 @@ const btnSound = () => {
 const errorSound = () => {
   let errorAudio = new Audio("/sounds/error-sound.mp3");
   errorAudio.play();
+};
+
+const checkOutSound = () => {
+  let checkOutAudio = new Audio("/sounds/checkout-sound.mp3");
+  checkOutAudio.play();
 };
 const drawerWidth = 240;
 
@@ -114,7 +120,7 @@ const Drawer = styled(MuiDrawer, {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#00bfa5",
+      main: "#526dfe",
       contrastText: "#fff",
     },
   },
@@ -279,6 +285,7 @@ function App() {
               <IconButton
                 color="inherit"
                 onClick={() => {
+                  checkOutSound();
                   navigate("cart");
                 }}
               >
@@ -300,7 +307,7 @@ function App() {
                 px: [1],
               }}
             >
-              <IconButton onClick={toggleDrawer} sx={{ color: "#00bfa5" }}>
+              <IconButton onClick={toggleDrawer} sx={{ color: "#526dfe" }}>
                 <ChevronLeftIcon />
               </IconButton>
             </Toolbar>
@@ -316,8 +323,14 @@ function App() {
             </List>
           </Drawer>
           <Box
+            className="background"
             component="main"
             sx={{
+              backgroundImage: `url(https://fcit.usf.edu/matrix/wp-content/uploads/2019/03/CircuitBoard-LtGrey-Wide.jpg)`,
+              backgroundRepeat: "no-repeat",
+
+              backgroundSize: "cover",
+              backgroundPosition: "center",
               backgroundColor: (theme) =>
                 theme.palette.mode === "light"
                   ? theme.palette.grey[100]

@@ -43,7 +43,7 @@ export default function SplitButton({
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#00bfa5",
+        main: "#526dfe",
         contrastText: "#fff",
       },
     },

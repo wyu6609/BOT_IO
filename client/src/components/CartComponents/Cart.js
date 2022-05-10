@@ -12,6 +12,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#526dfe",
+      contrastText: "#fff",
+    },
+  },
   typography: {
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },
@@ -88,7 +94,7 @@ function Cart({ user, setCartLength }) {
           component="h2"
           variant="h3"
           align="center"
-          color="#3794ff"
+          color="#526dfe"
           gutterBottom
         >
           ya botz

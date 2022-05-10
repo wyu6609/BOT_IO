@@ -12,7 +12,6 @@ const btnSound = () => {
   let btnAudio = new Audio("/sounds/review-btn-sound.mp3");
   btnAudio.play();
 };
-
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton
@@ -22,7 +21,7 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#00bfa5" }}>
+      <ListItemIcon sx={{ color: "#526dfe" }}>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Home" />
@@ -34,7 +33,7 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#00bfa5" }}>
+      <ListItemIcon sx={{ color: "#526dfe" }}>
         <SmartToyIcon />
       </ListItemIcon>
       <ListItemText primary="Market" />
@@ -46,7 +45,7 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#00bfa5" }}>
+      <ListItemIcon sx={{ color: "#526dfe" }}>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Profile" />
@@ -58,7 +57,7 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#00bfa5" }}>
+      <ListItemIcon sx={{ color: "#526dfe" }}>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="About Us" />

@@ -19,12 +19,17 @@
 .marquee {
   height: 450px;
 
-  border: 2px solid #eee;
+  border: 0.05px solid #526dfe;
   overflow: hidden;
   border-radius: 30px;
   position: relative;
   margin: 100px auto;
-  background-color: white;
+  background-color: #f4f2f7;
+
+  background-image: url("../images/card-bg.png");
+  background-position: 5% 5%;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .marquee--inner {
@@ -54,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #01bfa5;
+  color: #526dfe;
 }
 .vibrate-3 {
   -webkit-animation: vibrate-3 0.8s linear infinite both;

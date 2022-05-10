@@ -18,12 +18,18 @@ import PaymentForm from "./PaymentForm";
 import Review from "./Review";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#526dfe",
+      contrastText: "#fff",
+    },
+  },
   typography: {
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },

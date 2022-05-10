@@ -125,7 +125,7 @@ function Market({ handleAddCart }) {
                 variant="h2"
                 align="center"
                 color="
-              #01bfa5"
+              #526dfe"
                 gutterBottom
               >
                 market
@@ -186,7 +186,7 @@ function Market({ handleAddCart }) {
                         gutterBottom
                         variant="h5"
                         component="h2"
-                        sx={{ color: "#01bfa5" }}
+                        sx={{ color: "#526dfe" }}
                       >
                         {bot.title}
                       </Typography>

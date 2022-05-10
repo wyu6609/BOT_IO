@@ -121,7 +121,7 @@ function BotPage({ user, handleAddCart }) {
                       : theme.palette.grey[700],
                 }}
               />
-              <CardContent>
+              <CardContent className="background">
                 <CardMedia
                   className="floating-1"
                   component="img"

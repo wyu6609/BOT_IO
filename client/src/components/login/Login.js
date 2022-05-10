@@ -104,7 +104,6 @@ export default function Login({ onLogin, fetchCartLength }) {
           </Box>
         </Grid>
       </Grid>
-      <ToastContainer />
     </ThemeProvider>
   );
 }

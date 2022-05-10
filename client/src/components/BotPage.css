@@ -4,6 +4,10 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
+.background {
+  background-image: url("../images/card-bg.png");
+  background-position: left;
+}
 
 @keyframes floating {
   0% {
