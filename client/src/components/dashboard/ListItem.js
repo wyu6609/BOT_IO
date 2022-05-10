@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import PeopleIcon from "@mui/icons-material/People";
-import BarChartIcon from "@mui/icons-material/BarChart";
-
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import InfoIcon from "@mui/icons-material/Info";
 const btnSound = () => {
   let btnAudio = new Audio("/sounds/review-btn-sound.mp3");
   btnAudio.play();
@@ -48,8 +48,21 @@ export const mainListItems = (
       <ListItemIcon sx={{ color: "#526dfe" }}>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Profile" />
+      <ListItemText primary="profile" />
     </ListItemButton>
+    <ListItemButton
+      component={Link}
+      to="contact"
+      onClick={() => {
+        btnSound();
+      }}
+    >
+      <ListItemIcon sx={{ color: "#526dfe" }}>
+        <ConnectWithoutContactIcon />
+      </ListItemIcon>
+      <ListItemText primary="contact us" />
+    </ListItemButton>
+
     <ListItemButton
       component={Link}
       to="about"
@@ -58,9 +71,9 @@ export const mainListItems = (
       }}
     >
       <ListItemIcon sx={{ color: "#526dfe" }}>
-        <BarChartIcon />
+        <InfoIcon />
       </ListItemIcon>
-      <ListItemText primary="About Us" />
+      <ListItemText primary="About" />
     </ListItemButton>
   </React.Fragment>
 );

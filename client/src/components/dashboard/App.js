@@ -31,8 +31,8 @@ import Market from "../Market";
 import Checkout from "../checkout/Checkout";
 import TypeWriterEffect from "react-typewriter-effect";
 import Profile from "../Profile";
+import Contact from "../Contact";
 import About from "../About";
-import Footer from "./Footer";
 import "../App.css";
 function Copyright(props) {
   return (
@@ -424,9 +424,11 @@ function App() {
                 />
                 <Route path="profile" element={<Profile user={user} />} />
                 <Route
-                  path="about"
-                  element={<About user={user} botList={botList} />}
+                  path="contact"
+                  element={<Contact user={user} botList={botList} />}
                 />
+                <Route path="about" element={<About />} />
+
                 <Route path="*" element={<Error />} />
               </Routes>
             </Container>
