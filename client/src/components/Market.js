@@ -199,7 +199,7 @@ function Market({ handleAddCart, botList }) {
                           handleAddCart(bot.id);
                         }}
                         size="small"
-                        sx={{ color: "#7cb343" }}
+                        sx={{ color: "green" }}
                       >
                         <AddShoppingCartRoundedIcon />
                       </IconButton>
@@ -209,7 +209,7 @@ function Market({ handleAddCart, botList }) {
                           mx: "auto",
                         }}
                         align="right"
-                        color="#7cb343"
+                        color="#1365f0"
                       >
                         ${bot.price}
                       </Typography>
@@ -287,8 +287,8 @@ function Market({ handleAddCart, botList }) {
           nextLinkClassName={"nextBttn"}
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
-          marginPagesDisplayed={0}
-          pageRangeDisplayed={0}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={2}
         />
       </ThemeProvider>
     </>
