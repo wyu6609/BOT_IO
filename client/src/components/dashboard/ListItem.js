@@ -21,10 +21,10 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#526dfe" }}>
+      <ListItemIcon sx={{ color: "#1265f0" }}>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Home" />
+      <ListItemText primary="home" />
     </ListItemButton>
     <ListItemButton
       component={Link}
@@ -33,10 +33,10 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#526dfe" }}>
+      <ListItemIcon sx={{ color: "#1265f0" }}>
         <SmartToyIcon />
       </ListItemIcon>
-      <ListItemText primary="Market" />
+      <ListItemText primary="market" />
     </ListItemButton>
     <ListItemButton
       component={Link}
@@ -45,7 +45,7 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#526dfe" }}>
+      <ListItemIcon sx={{ color: "#1265f0" }}>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="profile" />
@@ -57,10 +57,10 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#526dfe" }}>
+      <ListItemIcon sx={{ color: "#1265f0" }}>
         <ConnectWithoutContactIcon />
       </ListItemIcon>
-      <ListItemText primary="contact us" />
+      <ListItemText primary="contact" />
     </ListItemButton>
 
     <ListItemButton
@@ -70,10 +70,10 @@ export const mainListItems = (
         btnSound();
       }}
     >
-      <ListItemIcon sx={{ color: "#526dfe" }}>
+      <ListItemIcon sx={{ color: "#1265f0" }}>
         <InfoIcon />
       </ListItemIcon>
-      <ListItemText primary="About" />
+      <ListItemText primary="about" />
     </ListItemButton>
   </React.Fragment>
 );

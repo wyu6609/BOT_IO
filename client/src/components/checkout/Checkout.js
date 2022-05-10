@@ -26,7 +26,7 @@ const steps = ["Shipping address", "Payment details", "Review your order"];
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#526dfe",
+      main: "#1265f0",
       contrastText: "#fff",
     },
   },

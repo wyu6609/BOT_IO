@@ -5,7 +5,7 @@ import "./EmptyCart.css";
 export default function ActionAreaCard() {
   return (
     <Container sx={{ maxWidth: 345, height: 150, my: 5, color: "red" }}>
-      <h3>ya cart iz emptee!</h3>
+      <h3>user_bots = []</h3>
       <div>
         <ProductionQuantityLimitsOutlinedIcon className="empty-cart-icon" />
       </div>

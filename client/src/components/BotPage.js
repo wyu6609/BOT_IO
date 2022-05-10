@@ -86,7 +86,7 @@ function BotPage({ user, handleAddCart }) {
           component="h2"
           variant="h2"
           align="center"
-          color="#3794ff"
+          color="#1265f0"
           gutterBottom
         >
           {bot.title}
@@ -170,7 +170,7 @@ function BotPage({ user, handleAddCart }) {
                   user={user}
                 />
                 <IconButton
-                  sx={{ color: "#3794ff" }}
+                  sx={{ color: "#1265f0" }}
                   onClick={() => {
                     handleAddCart(bot.id, user.id);
                   }}

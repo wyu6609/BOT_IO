@@ -42,6 +42,7 @@ export default function Login({ onLogin, fetchCartLength, fetchBots }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer />
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
@@ -50,7 +51,7 @@ export default function Login({ onLogin, fetchCartLength, fetchBots }) {
           sm={4}
           md={7}
           sx={{
-            backgroundColor: "#526dfe",
+            backgroundColor: showLogin ? "#1265f0" : "#00bfa5",
           }}
         >
           <div className="centered">
@@ -76,9 +77,9 @@ export default function Login({ onLogin, fetchCartLength, fetchBots }) {
               alignItems: "center",
             }}
           >
+            <h1 className="login-title">BOT_IO 1.1</h1>
             {showLogin ? (
               <>
-                <h1 className="login-title">BOT_IO 1.1</h1>
                 <LoginForm
                   fetchCartLength={fetchCartLength}
                   fetchBots={fetchBots}

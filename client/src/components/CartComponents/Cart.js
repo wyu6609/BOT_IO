@@ -15,7 +15,7 @@ import "./Cart.css";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#526dfe",
+      main: "#1265f0",
       contrastText: "#fff",
     },
   },
@@ -95,7 +95,7 @@ function Cart({ user, setCartLength }) {
           component="h2"
           variant="h3"
           align="center"
-          color="#526dfe"
+          color="#1265f0"
           gutterBottom
         >
           ya botz
@@ -117,8 +117,8 @@ function Cart({ user, setCartLength }) {
           py: [3, 0],
         }}
       >
-        <Grid container item justifyContent="center" className="floating">
-          <span className="total-container">Total: ${cartSum}</span>
+        <Grid container item justifyContent="center">
+          <span className="total-container">total: ${cartSum}</span>
         </Grid>
         <Grid container item justifyContent="center" sx={{ mt: 3 }}>
           <Button

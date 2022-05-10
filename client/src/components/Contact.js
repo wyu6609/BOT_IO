@@ -28,7 +28,6 @@ function Copyright(props) {
         Your Website
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -53,7 +52,7 @@ export default function SignInSide({ botList }) {
       </div>
     );
   });
-  console.log(imgBots);
+
   return (
     <Grid container align="center" className="aboutContainer">
       <Grid item xs={false} sm={6} md={6}>
@@ -93,7 +92,7 @@ export default function SignInSide({ botList }) {
                 required
                 fullWidth
                 id="email"
-                label="email Address"
+                label="email address"
                 name="email"
                 autoFocus
               />

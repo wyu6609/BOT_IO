@@ -123,7 +123,7 @@ const Drawer = styled(MuiDrawer, {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#526dfe",
+      main: "#1265f0",
 
       contrastText: "#fff",
     },
@@ -171,7 +171,8 @@ function App() {
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        toast.success(`WELCOME ${user.username}!`, {
+        logoutSound();
+        toast.success(`LOGGED OUT!`, {
           theme: "colored",
           position: "top-center",
           autoClose: 2500,
@@ -181,8 +182,6 @@ function App() {
           draggable: false,
           progress: undefined,
         });
-        logoutSound();
-
         setUser(null);
 
         // window.location.reload(false);
@@ -264,16 +263,18 @@ function App() {
 
   if (!user)
     return (
-      <Login
-        onLogin={setUser}
-        fetchCartLength={fetchCartLength}
-        fetchBots={fetchBots}
-      />
+      <div>
+        <Login
+          onLogin={setUser}
+          fetchCartLength={fetchCartLength}
+          fetchBots={fetchBots}
+        />
+        <ToastContainer />
+      </div>
     );
 
   return (
-    <>
-      <ToastContainer />
+    <div>
       <ThemeProvider theme={theme}>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
@@ -348,7 +349,7 @@ function App() {
                 px: [1],
               }}
             >
-              <IconButton onClick={toggleDrawer} sx={{ color: "#526dfe" }}>
+              <IconButton onClick={toggleDrawer} sx={{ color: "#1265f0" }}>
                 <ChevronLeftIcon />
               </IconButton>
             </Toolbar>
@@ -437,7 +438,8 @@ function App() {
         </Box>
         {/* <Footer /> */}
       </ThemeProvider>
-    </>
+      <ToastContainer />
+    </div>
   );
 }
 export default App;

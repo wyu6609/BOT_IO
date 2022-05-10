@@ -29,16 +29,7 @@ const theme = createTheme({
   },
 });
 
-function Market({ handleAddCart }) {
-  const [botList, setBotList] = useState([]);
-  useEffect(() => {
-    fetch("/bots")
-      .then((r) => r.json())
-      .then((bots) => {
-        setBotList(bots);
-      });
-  }, []);
-
+function Market({ handleAddCart, botList }) {
   const navigate = useNavigate();
   const options = [
     "All",
