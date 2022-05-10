@@ -46,37 +46,6 @@ const theme = createTheme({
 });
 
 export default function SignInSide({ botList }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    let formObj = {
-      email: data.get("email"),
-      message: data.get("message"),
-    };
-    fetch("https://formsubmit.com/wyu6609@gmail.com/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formObj),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          console.log("success");
-          toast.success(`Message sent!`, {
-            theme: "colored",
-            position: "top-center",
-            autoClose: 2500,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-          });
-        });
-      }
-    });
-  };
   let imgBots = botList.map((bot) => {
     return (
       <div className="orb1">
@@ -113,8 +82,10 @@ export default function SignInSide({ botList }) {
             </Typography>
             <Box
               component="form"
+              action="https://formsubmit.co/wyu6609@gmail.com"
+              method="POST"
               noValidate
-              onSubmit={handleSubmit}
+              //   onSubmit={handleSubmit}
               sx={{ mt: 1 }}
             >
               <TextField
