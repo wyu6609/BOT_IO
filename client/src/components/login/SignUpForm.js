@@ -35,8 +35,8 @@ function Copyright(props) {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#fde65d",
-      contrastText: "gray",
+      main: "#00bfa5",
+      contrastText: "white",
     },
   },
   typography: {
@@ -80,18 +80,17 @@ function SignUpForm({
         r.json().then((user) => {
           signSound();
           // onLogin(user);
-          setTimeout(function () {
-            toast.success(`THANK YOU FOR SIGNING UP!`, {
-              position: "top-center",
-              autoClose: 2500,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              progress: undefined,
-            });
-            setShowLogin(true);
-          }, 500);
+
+          toast.success(`THANK YOU FOR SIGNING UP!`, {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+          });
+          setShowLogin(true);
         });
       } else {
         r.json().then((err) => {
@@ -123,7 +122,7 @@ function SignUpForm({
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "#fde65d" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#00bfa5" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -201,7 +200,7 @@ function SignUpForm({
             <Grid container align="center" sx={{ mt: 3 }}>
               <Grid item>
                 <Link
-                  color="#cccccc"
+                  color="#00bfa5"
                   href="#"
                   variant="body2"
                   onClick={() => {

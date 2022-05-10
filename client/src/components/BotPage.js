@@ -104,7 +104,7 @@ function BotPage({ user, handleAddCart }) {
       <Container maxWidth="xs" component="main">
         <Grid container item alignItems="center" justifyContent="center">
           <Grid alignItems="center">
-            <Card>
+            <Card className="cardContainer">
               <CardHeader
                 title={`$${bot.price}`}
                 subheader={bot.subheader}
@@ -121,7 +121,7 @@ function BotPage({ user, handleAddCart }) {
                       : theme.palette.grey[700],
                 }}
               />
-              <CardContent className="background">
+              <CardContent className="bot-card-bg">
                 <CardMedia
                   className="floating-1"
                   component="img"

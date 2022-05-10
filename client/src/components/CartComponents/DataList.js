@@ -13,6 +13,7 @@ import EmptyCart from "./EmptyCart";
 export default function InsetDividers({ botCartList, handleDeleteCartItem }) {
   return (
     <List
+      className="cart-container"
       sx={{
         width: "500%",
         maxWidth: "500px",

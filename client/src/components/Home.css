@@ -19,17 +19,15 @@
 .marquee {
   height: 450px;
 
-  border: 0.05px solid #526dfe;
   overflow: hidden;
   border-radius: 30px;
   position: relative;
   margin: 100px auto;
-  background-color: #f4f2f7;
 
-  background-image: url("../images/card-bg.png");
-  background-position: 5% 5%;
+  background-image: url("../images/grey-circuit.jpeg");
+  background-position: 15% 50%;
   background-repeat: no-repeat;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.43);
 }
 
 .marquee--inner {

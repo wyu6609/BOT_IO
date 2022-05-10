@@ -29,8 +29,9 @@ import Home from "../Home";
 import Error from "../Error";
 import Market from "../Market";
 import Checkout from "../checkout/Checkout";
+import TypeWriterEffect from "react-typewriter-effect";
 import Footer from "./Footer";
-import "./App.css";
+import "../App.css";
 function Copyright(props) {
   return (
     <Typography
@@ -121,6 +122,12 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#526dfe",
+
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#01bfa5",
+
       contrastText: "#fff",
     },
   },
@@ -134,7 +141,7 @@ function App() {
   //set bots
   const [bots, setBots] = useState([]);
   //drawer menu open close state
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   // login state
   const [user, setUser] = useState(null);
   //bots state
@@ -154,20 +161,20 @@ function App() {
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        logoutSound();
-
-        setUser(null);
-
-        toast.error(`LOGGED OUT!`, {
+        toast.success(`WELCOME ${user.username}!`, {
           theme: "colored",
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 2500,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: false,
           draggable: false,
           progress: undefined,
         });
+        logoutSound();
+
+        setUser(null);
+
         // window.location.reload(false);
       }
     });
@@ -191,7 +198,6 @@ function App() {
     fetch(`/cart/${user.id}`)
       .then((r) => r.json())
       .then((data) => {
-        console.log(data.length);
         setCartLength(data.length);
       });
   };
@@ -282,6 +288,24 @@ function App() {
               >
                 BOT_IO 1.1
               </Typography>
+              <TypeWriterEffect
+                textStyle={{
+                  fontFamily: "Press Start 2P",
+                  color: "white",
+                  fontWeight: 500,
+                  fontSize: "0.9em",
+                }}
+                startDelay={2000}
+                cursorColor="white"
+                multiText={[
+                  `hey ${user.first_name}`,
+                  `ya username -> ${user.username}`,
+                  "buy a bot plz",
+                ]}
+                multiTextDelay={3000}
+                typeSpeed={130}
+                multiTextLoop
+              />
               <IconButton
                 color="inherit"
                 onClick={() => {
@@ -298,7 +322,7 @@ function App() {
               </IconButton>
             </Toolbar>
           </AppBar>
-          <Drawer variant="permanent" open={open}>
+          <Drawer variant="permanent" open={open} className="app-bar">
             <Toolbar
               sx={{
                 display: "flex",
@@ -326,7 +350,6 @@ function App() {
             className="background"
             component="main"
             sx={{
-              backgroundImage: `url(https://fcit.usf.edu/matrix/wp-content/uploads/2019/03/CircuitBoard-LtGrey-Wide.jpg)`,
               backgroundRepeat: "no-repeat",
 
               backgroundSize: "cover",

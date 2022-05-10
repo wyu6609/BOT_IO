@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import "../Cart.css";
 const theme = createTheme({
   palette: {
     primary: {
@@ -113,13 +114,13 @@ function Cart({ user, setCartLength }) {
         maxWidth="large"
         component="footer"
         sx={{
-          py: [3, 6],
+          py: [3, 0],
         }}
       >
-        <Grid container item justifyContent="center">
-          Total: ${cartSum}
+        <Grid container item justifyContent="center" className="floating">
+          <span className="total-container">Total: ${cartSum}</span>
         </Grid>
-        <Grid container item justifyContent="center" sx={{ mt: 2 }}>
+        <Grid container item justifyContent="center" sx={{ mt: 3 }}>
           <Button
             onClick={() => {
               navigate("/checkout");

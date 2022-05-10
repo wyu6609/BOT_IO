@@ -50,7 +50,7 @@ export default function Login({ onLogin, fetchCartLength }) {
           sm={4}
           md={7}
           sx={{
-            backgroundColor: "#00bfa5",
+            backgroundColor: "#526dfe",
           }}
         >
           <div className="centered">
