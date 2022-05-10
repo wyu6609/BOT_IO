@@ -59,7 +59,7 @@ function Cart({ user, setCartLength }) {
         console.log(data);
         setCartItems(cartItems.filter((el) => el.id !== data.id));
         deleteReviewSound();
-        toast.success("bot removed!", {
+        toast.error("bot removed!", {
           position: "top-center",
           autoClose: 600,
           hideProgressBar: false,

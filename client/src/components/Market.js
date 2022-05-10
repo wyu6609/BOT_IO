@@ -12,8 +12,8 @@ import Grid from "@mui/material/Grid";
 
 import Box from "@mui/material/Box";
 
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
@@ -186,20 +186,20 @@ function Market({ handleAddCart, botList }) {
                       </Typography> */}
                     </CardContent>
                     <Typography
-                      sx={{ color: "#bf2900", px: 0.5 }}
+                      sx={{ color: "red", px: 0.5 }}
                       size="small"
                       component="p"
                       align="center"
                     >
                       {bot.category.name}
                     </Typography>
-                    <CardActions>
+                    <CardActions sx={{ backgroundColor: "#eeeeee" }}>
                       <IconButton
                         onClick={() => {
                           handleAddCart(bot.id);
                         }}
                         size="small"
-                        sx={{ color: "#bf8900" }}
+                        sx={{ color: "#7cb343" }}
                       >
                         <AddShoppingCartRoundedIcon />
                       </IconButton>
@@ -209,7 +209,7 @@ function Market({ handleAddCart, botList }) {
                           mx: "auto",
                         }}
                         align="right"
-                        color="#bf8900"
+                        color="#7cb343"
                       >
                         ${bot.price}
                       </Typography>

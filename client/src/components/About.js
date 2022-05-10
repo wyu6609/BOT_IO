@@ -12,9 +12,6 @@ const About = () => {
     <Grid container justifyContent="center">
       <ThemeProvider>
         <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-          <Typography variant="h4" gutterBottom align="center">
-            about
-          </Typography>
           <Paper
             variant="outlined"
             sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}

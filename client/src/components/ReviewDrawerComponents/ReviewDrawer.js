@@ -177,11 +177,7 @@ function ReviewDrawer(props) {
         }}
       />
 
-      <IconButton
-        onClick={toggleDrawer(true)}
-        className="blink"
-        sx={{ color: "#01bfa5" }}
-      >
+      <IconButton onClick={toggleDrawer(true)} sx={{ color: "#01bfa5" }}>
         <PreviewOutlinedIcon />
       </IconButton>
 

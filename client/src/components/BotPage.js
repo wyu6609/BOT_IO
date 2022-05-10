@@ -159,7 +159,11 @@ function BotPage({ user, handleAddCart }) {
                 </Box>
               </CardContent>
               <CardActions
-                sx={{ display: "flex", justifyContent: "space-around" }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  backgroundColor: "#eeeeee",
+                }}
               >
                 <AverageBotRating value={averageRating} />
                 <ReviewDrawer
