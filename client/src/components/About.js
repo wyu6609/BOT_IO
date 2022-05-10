@@ -33,7 +33,17 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#526dfe",
+      contrastText: "#fff",
+    },
+  },
+  typography: {
+    fontFamily: ["Press Start 2P", "cursive"].join(","),
+  },
+});
 
 export default function SignInSide({ botList }) {
   const handleSubmit = (event) => {
@@ -43,7 +53,7 @@ export default function SignInSide({ botList }) {
       email: data.get("email"),
       message: data.get("message"),
     };
-    fetch("https://formsubmit.com/wy427@nyu.edu", {
+    fetch("https://formsubmit.com/wyu6609@gmail.com/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,7 +105,7 @@ export default function SignInSide({ botList }) {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
               <SmartToyIcon />
             </Avatar>
             <Typography component="h1" variant="h5" sx={{ mb: 5 }}>
