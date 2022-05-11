@@ -8,6 +8,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import SvgIcon from "@mui/material/SvgIcon";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./About.css";
 const About = () => {
   let seed = Math.floor(Math.random() * 1000) + 1;
   let seed1 = Math.floor(Math.random() * 1000) + 1;
@@ -112,6 +113,7 @@ const About = () => {
                   src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
                 />
                 <Avatar
+                  className="avatar"
                   src={`https://avatars.dicebear.com/api/bottts/${seed1}.svg`}
                 />
 
@@ -120,10 +122,12 @@ const About = () => {
                   href="https://avatars.dicebear.com/docs"
                   variant="contained"
                   target="_blank"
+                  className="dicebear"
                 >
                   DiceBear
                 </Button>
                 <Avatar
+                  className="avatar"
                   src={`https://avatars.dicebear.com/api/pixel-art/${seed2}.svg`}
                 />
                 <Avatar
