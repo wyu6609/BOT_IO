@@ -223,7 +223,7 @@ function ReviewDrawer(props) {
           }}
         >
           <Grid container xs={12} sm={12} md={12} lg={12}>
-            <Grid item xs={12} sm={12} md={12} lg={12} disableSticky="false">
+            <Grid item xs={12} sm={12} md={12} lg={12}>
               <ReviewAccordion
                 className="reviewAccordion"
                 handleSubmit={handleSubmit}
