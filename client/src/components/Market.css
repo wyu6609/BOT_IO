@@ -74,7 +74,8 @@
     cursor: pointer;
   }
   .market-header {
-    font-size: 14x;
+    font-size: 14px;
+    display: none;
   }
   /* .market-subheader {
     font-size: 12px;

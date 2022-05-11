@@ -2,4 +2,10 @@
   .avatar {
     display: none;
   }
+  .about-subheader {
+    font: 8px;
+  }
+  .about-container {
+    margin-top: 0px;
+  }
 }

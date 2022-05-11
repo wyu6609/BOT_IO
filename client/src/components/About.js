@@ -23,7 +23,12 @@ const About = () => {
       justifyContent="center"
     >
       <ThemeProvider>
-        <Container component="main" maxWidth="sm" sx={{ mt: 10, mb: 4 }}>
+        <Container
+          className="about-container"
+          component="main"
+          maxWidth="sm"
+          sx={{ mt: 10, mb: 4 }}
+        >
           <Paper
             variant="outlined"
             sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
@@ -39,7 +44,12 @@ const About = () => {
               bot_io:
             </Typography>
 
-            <Typography variant="h5" gutterBottom align="center">
+            <Typography
+              variant="h5"
+              gutterBottom
+              align="center"
+              className="about-subheader"
+            >
               a fictional market place
             </Typography>
 
