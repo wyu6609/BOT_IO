@@ -87,10 +87,10 @@ const About = () => {
               bot and avatar svgs from
               <span className="about-bottom">
                 <Avatar
-                  src={`https://avatars.dicebear.com/api/pixel-art/${seed2}.svg`}
+                  src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
                 />
                 <Avatar
-                  src={`https://avatars.dicebear.com/api/pixel-art/${seed3}.svg`}
+                  src={`https://avatars.dicebear.com/api/bottts/${seed1}.svg`}
                 />
 
                 <Button
@@ -102,10 +102,10 @@ const About = () => {
                   DiceBear
                 </Button>
                 <Avatar
-                  src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
+                  src={`https://avatars.dicebear.com/api/pixel-art/${seed2}.svg`}
                 />
                 <Avatar
-                  src={`https://avatars.dicebear.com/api/bottts/${seed1}.svg`}
+                  src={`https://avatars.dicebear.com/api/pixel-art/${seed3}.svg`}
                 />
               </span>
             </Typography>
