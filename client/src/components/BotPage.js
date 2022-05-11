@@ -92,9 +92,11 @@ function BotPage({ user, handleAddCart }) {
           {bot.title}
         </Typography>
         <Typography
+          sx={{ px: 30 }}
+          width="small"
           variant="h5"
           align="center"
-          color="text.secondary"
+          color="black"
           component="p"
         >
           {bot.description}

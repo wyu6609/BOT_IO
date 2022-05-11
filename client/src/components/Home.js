@@ -1,11 +1,18 @@
 import { React, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = ({ botList }) => {
+  const navigate = useNavigate();
   let imgBots = botList.map((bot) => {
     return (
-      <div className="orb">
-        <img className="bot-image  " src={bot.image} />
+      <div
+        className="orb"
+        onClick={() => {
+          navigate(navigate(`market/bots/${bot.id}`));
+        }}
+      >
+        <img className="bot-image" src={bot.image} />
       </div>
     );
   });

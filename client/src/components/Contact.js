@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -45,9 +46,15 @@ const theme = createTheme({
 });
 
 export default function SignInSide({ botList }) {
+  const navigate = useNavigate();
   let imgBots = botList.map((bot) => {
     return (
-      <div className="orb1">
+      <div
+        className="orb1"
+        onClick={() => {
+          navigate(`../market/bots/${bot.id}`);
+        }}
+      >
         <img className="bot-image1" src={bot.image} />
       </div>
     );
@@ -101,7 +108,7 @@ export default function SignInSide({ botList }) {
                 required
                 fullWidth
                 name="message"
-                label="message"
+                label="leave us a message"
                 type="message"
                 id="message"
                 multiline
@@ -109,7 +116,7 @@ export default function SignInSide({ botList }) {
               />
 
               <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
-                Submit
+                send
               </Button>
             </Box>
           </Box>

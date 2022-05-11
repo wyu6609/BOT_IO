@@ -10,11 +10,11 @@
   margin: 25px;
 }
 
-/* .orb:hover {
-  transform: scale(1.2);
-  opacity: 0.5;
+.orb:hover {
+  transform: scale(1.25);
+  opacity: 1.5;
   cursor: pointer;
-} */
+}
 
 .marquee {
   height: 450px;

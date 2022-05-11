@@ -121,12 +121,7 @@ function Market({ handleAddCart, botList }) {
               >
                 market
               </Typography>
-              <Typography
-                variant="h5"
-                align="center"
-                color="text.secondary"
-                paragraph
-              >
+              <Typography variant="h5" align="center" color="black" paragraph>
                 buy a bot
               </Typography>
             </Container>

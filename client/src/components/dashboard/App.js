@@ -387,15 +387,16 @@ function App() {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Routes>
                 <Route
-                  path="/"
-                  element={<Home user={user} botList={botList} />}
-                />
-                <Route
                   path="market/bots/:bot_id"
                   element={
                     <BotPage user={user} handleAddCart={handleAddCart} />
                   }
                 />
+                <Route
+                  path="/"
+                  element={<Home user={user} botList={botList} />}
+                />
+
                 <Route
                   path="market"
                   element={
