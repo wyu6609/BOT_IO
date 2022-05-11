@@ -32,7 +32,7 @@ export default function DrawerList({ reviews, user_id, handleDelete }) {
     <List
       sx={{
         width: "100%",
-        maxWidth: "80%",
+        maxWidth: "100%",
         bgcolor: "background.paper",
       }}
     >
@@ -54,6 +54,7 @@ export default function DrawerList({ reviews, user_id, handleDelete }) {
             />
             {user_id === review.user.id && (
               <IconButton
+                sx={{ ml: 2 }}
                 onClick={() => {
                   handleDelete();
                 }}

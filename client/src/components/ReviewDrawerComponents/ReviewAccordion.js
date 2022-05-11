@@ -12,6 +12,11 @@ export default function ReviewAccordion({ handleSubmit, reviewBtnSound }) {
     <div>
       <Accordion align="center" justifyContent="center">
         <AccordionSummary
+          sx={{
+            "&:hover": {
+              backgroundColor: "#eeeeee",
+            },
+          }}
           onClick={() => {
             reviewBtnSound();
           }}

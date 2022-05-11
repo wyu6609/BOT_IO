@@ -36,18 +36,12 @@ import About from "../About";
 import "../App.css";
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
+    <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://willyu.netlify.com" target="_blank">
         BOT.IO
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -74,7 +68,7 @@ const checkOutSound = () => {
   let checkOutAudio = new Audio("/sounds/checkout-sound.mp3");
   checkOutAudio.play();
 };
-const drawerWidth = 240;
+const drawerWidth = 414;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -137,6 +131,7 @@ const theme = createTheme({
     fontFamily: ["Press Start 2P", "cursive"].join(","),
   },
 });
+
 function App() {
   // useNavigate hook
   const navigate = useNavigate();
@@ -437,7 +432,6 @@ function App() {
                 <Route path="*" element={<Error />} />
               </Routes>
             </Container>
-            <Copyright sx={{ pt: 4 }} />
           </Box>
         </Box>
         {/* <Footer /> */}

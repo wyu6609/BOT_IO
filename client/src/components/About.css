@@ -1,4 +1,4 @@
-@media (max-width: 414px) {
+@media (max-width: 490px) {
   .avatar {
     display: none;
   }
@@ -6,6 +6,10 @@
     font: 8px;
   }
   .about-container {
-    margin-top: 0px;
+    height: 200%;
+    margin-top: -80px;
+  }
+  .about-bottom {
+    display: none;
   }
 }

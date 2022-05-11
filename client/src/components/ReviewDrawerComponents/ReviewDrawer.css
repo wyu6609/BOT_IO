@@ -31,3 +31,20 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 414px) {
+  .review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .review-length {
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .puller {
+    display: none;
+  }
+}

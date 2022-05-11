@@ -108,7 +108,7 @@ export default function SignInSide({ botList }) {
                 required
                 fullWidth
                 name="message"
-                label="leave us a message"
+                label="message us"
                 type="message"
                 id="message"
                 multiline

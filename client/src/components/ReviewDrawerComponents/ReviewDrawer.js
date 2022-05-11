@@ -204,7 +204,13 @@ function ReviewDrawer(props) {
             left: 0,
           }}
         >
-          <Typography align="center" sx={{ p: 2, color: "#01bfa5" }}>
+          <Puller className="puller " sx={{ my: 0.05 }} />
+
+          <Typography
+            className="review-length"
+            align="center"
+            sx={{ p: 2, color: "#01bfa5" }}
+          >
             {props.reviews.length} Reviews
           </Typography>
         </StyledBox>
@@ -216,18 +222,18 @@ function ReviewDrawer(props) {
             overflow: "auto",
           }}
         >
-          <Grid container>
-            <Grid item xs={6}>
+          <Grid container xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <ReviewAccordion
+                handleSubmit={handleSubmit}
+                reviewBtnSound={reviewBtnSound}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
               <DrawerList
                 reviews={props.reviews}
                 user_id={props.user_id}
                 handleDelete={handleDelete}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <ReviewAccordion
-                handleSubmit={handleSubmit}
-                reviewBtnSound={reviewBtnSound}
               />
             </Grid>
           </Grid>
