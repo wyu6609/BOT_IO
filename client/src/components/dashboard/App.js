@@ -68,51 +68,7 @@ const checkOutSound = () => {
   let checkOutAudio = new Audio("/sounds/checkout-sound.mp3");
   checkOutAudio.play();
 };
-const drawerWidth = 414;
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(9),
-      },
-    }),
-  },
-}));
+// const drawerWidth = 214;
 
 const theme = createTheme({
   palette: {
@@ -148,6 +104,52 @@ function App() {
   const [cartTotal, setCartTotal] = useState("");
   const [userCart, setUserCart] = useState([]);
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [drawerWidth, setDrawerWidth] = useState(240);
+
+  const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== "open",
+  })(({ theme, open }) => ({
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    ...(open && {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    }),
+  }));
+
+  const Drawer = styled(MuiDrawer, {
+    shouldForwardProp: (prop) => prop !== "open",
+  })(({ theme, open }) => ({
+    "& .MuiDrawer-paper": {
+      position: "relative",
+      whiteSpace: "nowrap",
+      width: drawerWidth,
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      boxSizing: "border-box",
+      ...(!open && {
+        overflowX: "hidden",
+        transition: theme.transitions.create("width", {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.leavingScreen,
+        }),
+        width: theme.spacing(7),
+        [theme.breakpoints.up("sm")]: {
+          width: theme.spacing(9),
+        },
+      }),
+    },
+  }));
   //fetch bots
   const fetchBots = () => {
     fetch("/bots")
@@ -183,8 +185,30 @@ function App() {
       }
     });
   }
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  });
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+      setIsMobile(true);
 
-  //auto login
+      setDrawerWidth(window.innerWidth);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobile == true) {
+      setDrawerWidth(window.innerWidth);
+      console.log(drawerWidth);
+    } else {
+      setDrawerWidth(240);
+      console.log(drawerWidth);
+    }
+  }, [isMobile]);
+
+  // create an event listener
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -353,6 +377,7 @@ function App() {
             </Toolbar>
             {/* menu list icons */}
             <List
+              className="vertical-nav"
               component="nav"
               sx={{
                 mt: 5,

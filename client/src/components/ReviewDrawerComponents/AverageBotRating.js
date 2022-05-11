@@ -29,6 +29,7 @@ export default function AverageBotRating({ value }) {
         width: 200,
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Rating
@@ -39,9 +40,7 @@ export default function AverageBotRating({ value }) {
         readOnly
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
-      {value !== null && (
-        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-      )}
+      {value !== null && <Box sx={{ ml: 2 }}></Box>}
     </Box>
   );
 }

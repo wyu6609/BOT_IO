@@ -27,4 +27,10 @@
   .typewriter {
     font-size: 8px;
   }
+  .listItemText {
+    margin-right: 1px;
+  }
+  .vertical-nav {
+    overflow: hidden;
+  }
 }

@@ -101,7 +101,7 @@ export default function SplitButton({
                   placement === "bottom" ? "center top" : "center bottom",
               }}
             >
-              <Paper sx={{ color: "#bf2900" }}>
+              <Paper sx={{ color: "#ff0000" }}>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList id="split-button-menu" autoFocusItem>
                     {options.map((option, index) => (

@@ -49,12 +49,13 @@ export default function DrawerList({ reviews, user_id, handleDelete }) {
               </Avatar>
             </ListItemAvatar>
             <ListItemText
+              className="listItemText"
               primary={review.description}
               secondary={review.user.username}
             />
             {user_id === review.user.id && (
               <IconButton
-                sx={{ ml: 2 }}
+                sx={{ ml: 3 }}
                 onClick={() => {
                   handleDelete();
                 }}

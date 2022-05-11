@@ -10,7 +10,7 @@ import "./ReviewAccordion.css";
 export default function ReviewAccordion({ handleSubmit, reviewBtnSound }) {
   return (
     <div>
-      <Accordion align="center" justifyContent="center">
+      <Accordion justifyContent="center">
         <AccordionSummary
           sx={{
             "&:hover": {
