@@ -186,6 +186,7 @@ function App() {
     });
   }
   useEffect(() => {
+    window.addEventListener("load", handleResize);
     window.addEventListener("resize", handleResize);
   });
   const handleResize = () => {
@@ -217,6 +218,7 @@ function App() {
           setUser(user);
           fetchBots();
           fetchCartLength(user);
+          window.addEventListener("resize", handleResize);
         });
       }
     });
