@@ -19,7 +19,7 @@ const Profile = ({ user }) => {
       justifyContent="center"
       className="aboutContainer floating"
     >
-      <Card sx={{ width: 400, my: 6 }}>
+      <Card sx={{ width: 400, my: 6 }} className="profile-container">
         <CardActionArea>
           <CardMedia
             component="img"

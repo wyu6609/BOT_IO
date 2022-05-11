@@ -20,3 +20,11 @@
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width: 600px) {
+  .navbar-title {
+    font-size: 11px;
+  }
+  .typewriter {
+    font-size: 8px;
+  }
+}

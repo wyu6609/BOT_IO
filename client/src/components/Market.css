@@ -14,38 +14,6 @@
     1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: all 0.5s ease; /* back to normal */
 }
-/* .paginationBttns {
-  width: 80%;
-  height: 40px;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding-top: 100px;
-  margin-left: 100px;
-}
-
-.paginationBttns a {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 8px;
-  border: 1px solid #1976d2;
-  color: #1976d2;
-  cursor: pointer;
-}
-.paginationBttns a:hover {
-  background-color: #1976d2;
-  color: white;
-}
-.paginationActive a {
-  color: white;
-  background-color: #1976d2;
-}
-.price {
-  margin-left: 10px;
-}
-.bot-grid {
-  padding-bottom: 30px;
-} */
 
 .paginationBttns {
   width: 80%;
@@ -80,4 +48,41 @@
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 414px) {
+  .paginate-container {
+    width: 80px;
+    margin-left: 90px;
+  }
+  .paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .paginationBttns a {
+    padding: 4px;
+    margin: 1px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #526dfe;
+    color: #526dfe;
+    cursor: pointer;
+  }
+  .market-header {
+    font-size: 14x;
+  }
+  /* .market-subheader {
+    font-size: 12px;
+  }
+  .card-name-title {
+    font-size: 18px;
+  }
+  .card-category {
+    font-size: 12px;
+  } */
 }

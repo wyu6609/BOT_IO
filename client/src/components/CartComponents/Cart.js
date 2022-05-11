@@ -100,16 +100,15 @@ function Cart({ user, setCartLength }) {
         >
           ya botz
         </Typography>
-        <Grid align="center" sx={{ mt: 9 }}>
+        <Grid align="center" sx={{ mt: 9 }} className="listContainer">
           <DataList
+            className="list"
             botCartList={cartItems}
             handleDeleteCartItem={handleDeleteCartItem}
           />
         </Grid>
       </Container>
 
-      <Container maxWidth="large" component="main"></Container>
-      {/* Footer */}
       <Container
         maxWidth="large"
         component="footer"

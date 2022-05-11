@@ -82,25 +82,27 @@ function BotPage({ user, handleAddCart }) {
         component="main"
         sx={{ pt: 4, pb: 4 }}
       >
-        <Typography
+        <h1
           component="h2"
           variant="h2"
           align="center"
           color="#1265f0"
           gutterBottom
+          className="bot-title"
         >
           {bot.title}
-        </Typography>
-        <Typography
+        </h1>
+        <h2
           sx={{ px: 30 }}
           width="small"
           variant="h5"
           align="center"
           color="black"
           component="p"
+          className="bot-description"
         >
           {bot.description}
-        </Typography>
+        </h2>
       </Container>
       {/* End hero unit */}
       <Container maxWidth="xs" component="main">

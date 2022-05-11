@@ -2,3 +2,9 @@
   background-color: #1265f0;
   color: white;
 }
+
+@media (max-width: 414px) {
+  .aboutContainer {
+    margin-left: 1px;
+  }
+}

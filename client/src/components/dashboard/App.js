@@ -143,7 +143,7 @@ function App() {
   //set bots
   const [bots, setBots] = useState([]);
   //drawer menu open close state
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   // login state
   const [user, setUser] = useState(null);
   //bots state
@@ -298,32 +298,35 @@ function App() {
                 <MenuIcon />
               </IconButton>
               <Typography
-                component="h1"
-                variant="h6"
+                component="h2"
+                variant="p"
                 color="inherit"
                 noWrap
                 sx={{ flexGrow: 1, fontFamily: "Press Start 2P" }}
+                className="navbar-title"
               >
-                BOT_IO 1.1
+                BOT.IO
               </Typography>
-              <TypeWriterEffect
-                textStyle={{
-                  fontFamily: "Press Start 2P",
-                  color: "white",
-                  fontWeight: 500,
-                  fontSize: "0.9em",
-                }}
-                startDelay={2000}
-                cursorColor="white"
-                multiText={[
-                  `hey ${user.first_name}`,
-                  `ya username -> ${user.username}`,
-                  "buy a bot plz",
-                ]}
-                multiTextDelay={3000}
-                typeSpeed={130}
-                multiTextLoop
-              />
+              <div className="typewriter">
+                <TypeWriterEffect
+                  textStyle={{
+                    fontFamily: "Press Start 2P",
+                    color: "white",
+                    fontWeight: 500,
+                    fontSize: "0.9em",
+                  }}
+                  startDelay={2000}
+                  cursorColor="white"
+                  multiText={[
+                    `hey ${user.first_name}`,
+                    `ya username -> ${user.username}`,
+                    "buy a bot plz",
+                  ]}
+                  multiTextDelay={3000}
+                  typeSpeed={130}
+                  multiTextLoop
+                />
+              </div>
               <IconButton
                 color="inherit"
                 onClick={() => {
