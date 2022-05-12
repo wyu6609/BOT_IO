@@ -92,17 +92,19 @@ function LoginForm({
         }, []);
       } else {
         r.json().then((err) => {
-          toast.error("INCORRECT LOGIN CREDENTIALS", {
-            theme: "colored",
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
+          err.errors.map((error) => {
+            toast.error(error, {
+              theme: "colored",
+              position: "top-center",
+              autoClose: 2500,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+            });
           });
-          console.log("fired");
+
           errorSound();
         });
       }

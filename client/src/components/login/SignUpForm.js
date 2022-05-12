@@ -16,18 +16,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { toast } from "react-toastify";
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
+    <Typography variant="body2" color="text.secondary" align="center">
       <Link color="inherit" href="https://willyu.netlify.com/">
         BOT.IO
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -94,16 +87,19 @@ function SignUpForm({
         });
       } else {
         r.json().then((err) => {
-          toast.error(`PLEASE DOUBLE CHECK YOUR INFO`, {
-            theme: "colored",
-            position: "top-center",
-            autoClose: 2500,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
+          err.errors.map((error) => {
+            toast.error(error, {
+              theme: "colored",
+              position: "top-center",
+              autoClose: 2500,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+            });
           });
+
           errorSound();
         });
       }

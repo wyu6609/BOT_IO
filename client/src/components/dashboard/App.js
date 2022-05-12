@@ -202,10 +202,8 @@ function App() {
   useEffect(() => {
     if (isMobile == true) {
       setDrawerWidth(window.innerWidth);
-      console.log(drawerWidth);
     } else {
       setDrawerWidth(240);
-      console.log(drawerWidth);
     }
   }, [isMobile]);
 
