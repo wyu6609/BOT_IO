@@ -2,19 +2,19 @@
 
 ## Description
 
-BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really show what I have learned over the course of the 15 week program. I had fun with this project, really focusing on front-end unique user experience and a clean simple user interface. It is also mobile responsive! I implemented Bot and Avatar svg images from DiceBear's API and incorporated a fun UI design to go along with the images. -Built with React, Rails and Material UI. 
+BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really show what I have learned over the course of the 15 week program. I had fun with this project, really focusing on front-end unique user experience and a clean simple user interface. It is also mobile responsive! I implemented Bot and Avatar svg images from DiceBear's API and incorporated a fun UI design to go along with the images. 
 
 ![Alt text](/git-demo/login.png?raw=true "Optional Title")
 <p align="center"><img src = "/git-demo/mobile-demo.gif"/></p>
 
 
 
-## Requirements
+## Technology Stack
 
-- Ruby 2.7.4
-- NodeJS (v16), and npm
-- Heroku CLI
-- Postgresql
+- React.js
+- Ruby on Rails
+- Material UI
+
  
 
 
