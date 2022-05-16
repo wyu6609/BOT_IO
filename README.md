@@ -29,5 +29,6 @@ BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really demonstr
 # User can add reviews to a bot and delete only their review. User can also see the average review of each bot.
 <p align="center"><img src = "/git-demo/review-demo.gif"/></p>
 
-# User can leave a message to the fictional owner's email.
+# Back-end schema
+<p align="center"><img src = "/git-demo/schema.png"/></p>
 
