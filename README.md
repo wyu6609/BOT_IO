@@ -5,7 +5,7 @@
 BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really demonstrate my frontend and backend skills I have picked up over the course of the 15 weeks at Flatiron Bootcamp. I had a lot fun with this project and really played with it. It is also mobile responsive! I implemented bot and user avatar svg images from DiceBear's API and incorporated a unique user experience by leveraging a lot of visuals and audio to really engage the user and a clean UI design for a more intuitive navigation. 
 
 <p align="center"><img src = "/git-demo/demo.gif"/></p>
-<p align="center"><img src = "/git-demo/mobile-demo.gif"/></p>
+<p align="center">Mobile Responsive<img src = "/git-demo/mobile-demo.gif"/></p>
 
 
 
