@@ -2,7 +2,7 @@
 
 ## Description
 
-BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really show what I have learned over the course of the 15 week program. I had fun with this project, really focusing on front-end unique user experience and a clean simple user interface. It is also mobile responsive! I implemented Bot and Avatar svg images from DiceBear's API and incorporated a fun UI design to go along with the images. 
+BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really demonstrate my frontend and backend skills I have pickedup over the course of the 15 weeks at Flatiron Bootcamp. I had a lot fun with this project and really played with it. It is also mobile responsive! I implemented bot and user avatar svg images from DiceBear's API and incorporated a unique user experience by leveraging a lot of visuals and audio to really engage the user and a clean UI design for a more intuitive navigation. 
 
 ![Alt text](/git-demo/login.png?raw=true "Optional Title")
 <p align="center"><img src = "/git-demo/mobile-demo.gif"/></p>
