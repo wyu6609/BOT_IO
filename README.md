@@ -18,17 +18,17 @@ BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really demonstr
  
 
 
-## Features
+# Features
 
-# User can add signup and create an account
+## User can create an account and login
 <p align="center"><img src = "/git-demo/login_signup_demo.gif"/></p>
 
-# User can add a bot to their cart. Each user has a unique cart, and saved to backend database.
+## User can add a bot to their cart. Each user has a unique cart, and saved to backend database.
 <p align="center"><img src = "/git-demo/add-to-cart.gif"/></p>
 
-# User can add reviews to a bot and delete only their review. User can also see the average review of each bot.
+## User can add reviews to a bot and delete only their review. User can also see the average review of each bot.
 <p align="center"><img src = "/git-demo/review-demo.gif"/></p>
 
-# Back-end schema
+## Back-end schema
 <p align="center"><img src = "/git-demo/schema.png"/></p>
 
