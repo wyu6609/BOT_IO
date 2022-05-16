@@ -10,9 +10,7 @@ BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really show wha
 - NodeJS (v16), and npm
 - Heroku CLI
 - Postgresql
-
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
+ 
 
 ## Features
 
