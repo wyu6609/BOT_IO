@@ -25,7 +25,9 @@ BOT.IO is my Flatiron Bootcamp capstone project. The goal was to really show wha
 
 # User can add a bot to their cart. Each user has a unique cart, and saved to backend database.
 <p align="center"><img src = "/git-demo/add-to-cart.gif"/></p>
+
 # User can add reviews to a bot and delete only their review. User can also see the average review of each bot.
 <p align="center"><img src = "/git-demo/review-demo.gif"/></p>
+
 # User can leave a message to the fictional owner's email.
 
