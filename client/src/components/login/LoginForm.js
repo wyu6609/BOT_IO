@@ -25,7 +25,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://willyu.netlify.com">
+      <Link color="inherit" href="https://www.yuwilliam.com" target="_blank">
         BOT.IO
       </Link>{" "}
       {new Date().getFullYear()}

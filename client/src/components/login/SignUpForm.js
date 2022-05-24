@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
-      <Link color="inherit" href="https://willyu.netlify.com/">
+      <Link color="inherit" href="https://www.yuwilliam.com" target="_blank">
         BOT.IO
       </Link>
       {new Date().getFullYear()}
