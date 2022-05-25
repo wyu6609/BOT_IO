@@ -1,4 +1,4 @@
-# BOT_IO
+<h1 align = "center">BOT_IO</h1>
 
 <p align = "center"><a href = "https://youtu.be/IaJeeMGrXWA">Watch the app demo here!</a></p>
 <p align = "center"><a href = "http://buy-ya-bots.herokuapp.com/">Check out website here!</a></p>
