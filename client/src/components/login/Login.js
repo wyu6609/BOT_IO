@@ -63,7 +63,7 @@ export default function Login({ onLogin, fetchCartLength, fetchBots }) {
               //     : `https://avatars.dicebear.com/api/bottts/${seed}.svg`
               // }
 
-              src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
+              src={`https://api.dicebear.com/7.x/bottts/svg?seed=${seed}`}
             />
           </div>
         </Grid>

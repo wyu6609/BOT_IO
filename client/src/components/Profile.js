@@ -23,7 +23,7 @@ const Profile = ({ user }) => {
         <CardActionArea>
           <CardMedia
             component="img"
-            image={`https://avatars.dicebear.com/api/pixel-art/${user.id}.svg`}
+            image={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${user.id}`}
             alt="avatar"
           />
           <Divider className="line" />

@@ -41,7 +41,7 @@ puts 'seeding Bot...'
     description: Faker::Hipster.sentence(word_count: 4),
     category_id: Category.ids.sample,
     price: Faker::Number.between(from: 1, to: 100) * 5,
-    image: "https://avatars.dicebear.com/api/bottts/#{seed}.svg",
+    image: "https://api.dicebear.com/7.x/bottts/svg?seed=#{seed}",
   )
 end
 
